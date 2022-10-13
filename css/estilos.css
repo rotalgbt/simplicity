@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+}
+
+/* box sizing vem sempre no inicio */
+
+body,
+h1,
+h2,
+p,
+figure {
+    margin: 0;
+    padding: 0;
+    /* CSS Reset - remove espaçamento padrão dos elementos indicados*/
+}
+
+img {
+    max-width: 100%;
+}
+
+/* torna as imagens flexiveis, responsiva, até 100/5 do tamanho da tela */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* troca de fonte em td pagina, padrao */
+
+a {
+    text-decoration: none;
+    color: blue;
+    /* remove underline _ dos links */
+    /* todos os links clicados ou não, terão a mesma cor, azul */
+}
+
+header {
+    text-align: center;
+    height: 110px;
+    /* alinhamento do cabeçalho (titulo/menu) */
+    /* cor de fundo do texto e menu */
+    /* altura height - se fosse largura seria width*/
+}
+
+h1,
+nav {
+    text-transform: uppercase;
+}
+
+/* converter de letras minúsculas para mauiúscula ou vice versa */
+
+h1 {
+    padding-top: 10px;
+}
+
+h1 a {
+    background-color: black;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    font-weight: normal;
+
+    /* borda, cor da borda, arredondada, tipo, cor e tamanho de letra */
+    /* padding, espaçamento, sendo primeiro os cima/baixo e segundo os direita/esquerda */
+    /* fontes q ja são negrito, deixar normal */
+}
+
+nav {
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* menu tamanho, colunas, centralizado */
+    /* configura o MENU */
+}
+
+nav a {
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    /* regra para os links da nav, cor, negrito */
+    /* configura o LINK do Menu */
+}
+
+
+nav a:hover,
+nav a:focus {
+    background-color: lightslategrey;
+    padding: 10px;
+    /* regra pra acionar o botão do menu, muda cor pra clique */
+    /* hover - ao passar o mouse / focus - se for pelo teclado */
+    /* padding pra ele nao ficar so na letra a cor, e sim em tudo */
+}
+
+.redondo:hover,
+.redondo:focus { width: 40%;  }
+
+
+
+.destaque {
+    background-image: url(../imagens/fundo-destaque.jpg);
+    height: 400px;
+    color: white;
+    text-align: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+/* classe destaque / article / conteudos */
+/* tamanho da imagem, imagem fixa */
+/* cor do texto todo, alinhamento */
+
+/* 2 colunas - centralizadas (coluna e itens / pai e filho) */
+/* align items centraliza mas deixa espaços -  align content tira os espaços */
+/* flex wrap para fazer a quebra, pra levar o conteudo pra baixo qdo nao tiver espaço lado a lado*/
+
+
+/* .destaque h2 {  color: blueviolet; }
+   .destaque p {  color: brown; } 
+- faria assim se tivessem cores diferentes
+*/
+
+
+.destaque h2 {
+    font-size: 64px;
+    animation-name: aparecer;
+    animation-duration: 2s;
+    /* animação "aparecer" com tempo 2segundos */
+}
+
+.destaque p {
+    font-size: 32px;
+    font-weight: bold;
+    animation-name: aparecer;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+    /* pra entrar depois do h2, com atraso, usar delay */
+    /* backwards pra iniciar invisivel e depois aplicar o delay */
+}
+
+
+/* animação */
+/* depois de inserir, tem q aplicar (no h2 e p do destaque) */
+@keyframes aparecer {
+    from {  opacity: 0;  }
+    to {  opacity: 1;  }
+    /* sair de invisivel 0 pra visivel 1 */
+}
+
+
+article h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+
+article p {
+    padding: 10px
+}
+
+figure {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+    color: white;
+    text-shadow: black 1px 1px 3px;
+    text-align: center;
+}
+
+.historia iframe,
+.localizacao iframe {
+    width: 100%;
+    max-width: 650px;
+    /* largura 100%, flexivel, garante que aumenta e diminui responsivo ...  mas pra limitar e nao aumentar mto, usa max  */
+}
+
+
+#local {
+    text-align: center;
+}
+
+footer {
+    height: 200px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.conteudo {
+    background-color: lavender;
+    border-radius: 15px;
+}
+
+/* tabela, varias tags */
+table, td, th {
+    border: solid 2px white;
+    /* borda solida tamanho 2 e linha branca */
+    border-collapse: collapse;
+    padding: 5px;
+    /* border collapse elimina o espaçamento entre as linhas da borda */
+}
+
+table {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    /* margem centralizada, aceita pq tabela tbem é um bloco */
+}
+
+th {
+    /* celulas de cabeçalho + cor da letra*/
+    color: white;
+    padding: 10px;
+}
+
+td {
+    /* celulas de conteudo */
+    padding: 8px;
+}
+
+tr, th {
+    background-color: brown;
+    /* pega a linha inteira */
+    /* nesse caso tá pegando só o cabeçalho da tabela */
+}
+
+tr:nth-child(odd) {
+    background-color: darksalmon;
+    /* faz o zebrado de cores */
+    /* odd - formata só as linhas ímpares */
+    /* even - fomata as pares */
+}
+
+tr:nth-child(even) {
+    background-color: darkkhaki;
+}
+
+td:first-child { text-transform: uppercase; }
+td:nth-child(2) { color: blue}
+td:last-child { color: rgb(240, 18, 92);}
+/* first vai buscar o primeiro td, last o ultimo, 2 o segundo */
+/* pseudo classes */
+
+.redondo { 
+    border-radius: 100%; 
+    transition: 500ms;
+    box-shadow: rgba(0, 0, 0, 0.17) 0 0 10px 10px;
+    padding: 10px;
+}
+
+.redondo:hover,
+.redondo:focus { width: 25%;}
+/* hover passar o mouse em cima */
+
+
+/* as class fazer antes das media queries */
+/* table só a parte externa - td/th parte interna */
+/* media queries sempre no final do css */
+
+
+
+/* FORMULARIOS */
+button {
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+
+button:hover, button:focus { background-color: blue;}
+
+form {
+    background-color: azure;
+    width: 80%;
+    margin: auto;
+    padding: 15PX;
+    border-radius: 10PX;
+}
+
+#nome, #email, #nascimento, #tel, #assunto, #mensagem {
+/* dar mesmo tamanho pros campos caixa, largura width, altura height */
+    width: 100%;
+    height: 30px;
+}
+/* border: none --- se quiser sem borda */
+
+#mensagem { height: auto; }
+/* altura vai voltar a automatica */
+
+
+
+
+
+
+
+/*  ****  */
+
+/* regras condicionais usando media queries */
+/* mudança do menu de vertical pra horizontal */
+@media screen and (min-width: 530px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+    }
+
+    h1 {
+        margin-bottom: 2vw;
+        margin-left: 2vw;
+    }
+
+    nav {
+        margin-right: 2vw;
+        margin-top: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 800px) {
+    h1 a { font-size: 30px; }
+    header { height: 85px; }
+    /* altura de 85 */
+    nav { width: 70%; }
+    /* largura de 70% do espaço do nav/cabeçalho */
+    nav a { padding: 20px; }
+    .destaque { height: 550px; }
+    p { font-size: 20px; }
+}
+
+
+@media screen and (min-width: 1000px) {
+    .limitador {
+        max-width: 1000px;
+        margin: auto;
+    }
+}
+
